@@ -12,7 +12,7 @@ namespace WebAppTwo.Controllers
     public class HomeController : Controller
     {
         public static string connectionstring;
-        public static string CacheConnection = "redis-se-2015-043.redis.cache.windows.net:6380,password=o5Qw67PQ17VML5EFiwn7aGFI071ieOA8PvNZ1tA5vtw=,ssl=True,abortConnect=False";
+        public static string CacheConnection = "your cache conection string";
         public ActionResult Index()
         {
             return View();
@@ -22,7 +22,7 @@ namespace WebAppTwo.Controllers
         {
             ViewBag.Message = "No Of Employees";
 
-            connectionstring = "Server=tcp:server-se-2015-043.database.windows.net,1433;Initial Catalog=DB-se-2015-043;Persist Security Info=False;User ID=admin-se-2015-043;Password=SEloginS43;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            connectionstring = "your connection string";
             var conn = new SqlConnection(connectionstring);
             var cmd = new SqlCommand("SELECT COUNT(*) FROM Employee", conn);
 
@@ -39,7 +39,7 @@ namespace WebAppTwo.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Redis Cache";
-            connectionstring = "Server=tcp:server-se-2015-043.database.windows.net,1433;Initial Catalog=DB-se-2015-043;Persist Security Info=False;User ID=admin-se-2015-043;Password=SEloginS43;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            connectionstring = "your connection string";
             var connection = new SqlConnection(connectionstring);
             var command = new SqlCommand("SELECT COUNT(*) FROM Employee", connection);
 
